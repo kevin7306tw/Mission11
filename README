@@ -1,0 +1,23 @@
+#建立資料夾Mission11
+mkdir Mission11
+
+#進入資料夾
+cd Mission11
+
+#建立一個 docker-compose.yml 檔
+
+version: '3'
+services:
+  jupyter:
+    image: jupyter/base-notebook
+    container_name: jupyter-notebook
+    ports:
+      - "8888:8888"
+    command: start-notebook.sh --NotebookApp.token=''
+
+
+#啟動 docker-compose
+
+docker-compose up -d
+
+#開啟瀏覽器並於網址列輸入 localhost:8888
